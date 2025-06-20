@@ -4,6 +4,7 @@ resource "aws_db_instance" "postgres" {
   engine            = "postgres"
   engine_version    = "15.4"
   instance_class    = "db.t3.micro"
+  multi_az          = false
 
   db_name  = "postgres"
   username = "postgres"
