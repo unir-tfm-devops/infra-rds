@@ -15,7 +15,7 @@ module "vpc" {
   single_nat_gateway = false
 
   tags = {
-    Terraform   = "true"
+    Terraform = "true"
   }
 }
 
