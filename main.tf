@@ -14,6 +14,7 @@ resource "aws_db_instance" "postgres" {
   vpc_security_group_ids = [aws_security_group.postgres_sg.id]
   skip_final_snapshot    = true
   publicly_accessible    = true
+  monitoring_interval    = 0
 
   tags = {
     Name = "PostgreSQL RDS"
