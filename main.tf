@@ -23,7 +23,12 @@ resource "aws_db_instance" "postgres" {
 
 # Wait for RDS instance to be fully available
 resource "time_sleep" "wait_for_rds" {
-  depends_on = [aws_db_instance.postgres]
+  depends_on = [
+    aws_db_instance.postgres,
+    module.vpc,
+    aws_db_subnet_group.rds_subnet_group,
+    aws_security_group.postgres_sg
+  ]
 
   create_duration = "30s"
 }
