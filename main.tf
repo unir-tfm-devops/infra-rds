@@ -20,3 +20,10 @@ resource "aws_db_instance" "postgres" {
     Name = "PostgreSQL RDS"
   }
 }
+
+# Wait for RDS instance to be fully available
+resource "time_sleep" "wait_for_rds" {
+  depends_on = [aws_db_instance.postgres]
+
+  create_duration = "30s"
+}

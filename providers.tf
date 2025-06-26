@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 provider "postgresql" {
-  host            = aws_db_instance.postgres.endpoint
+  host            = aws_db_instance.postgres.address
   port            = 5432
   database        = "postgres"
   username        = aws_db_instance.postgres.username

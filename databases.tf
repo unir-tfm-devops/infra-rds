@@ -5,5 +5,5 @@ module "app_database" {
   database_name = "spring_boot_template_db"
   username      = "app_user"
   password      = "app_password_123"
-  rds_instance  = aws_db_instance.postgres
+  rds_instance  = time_sleep.wait_for_rds
 }
