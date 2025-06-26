@@ -13,7 +13,11 @@ terraform {
     }
     postgresql = {
       source  = "cyrilgdn/postgresql"
-      version = "~> 1.25.0"
+      version = "~> 1.0"
+    }
+    time = {
+      source  = "hashicorp/time"
+      version = "~> 0.9"
     }
   }
 }
