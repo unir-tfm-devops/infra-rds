@@ -10,4 +10,5 @@ provider "postgresql" {
   password        = aws_db_instance.postgres.password
   sslmode         = "require"
   connect_timeout = 15
+  superuser       = false
 }
