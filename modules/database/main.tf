@@ -22,6 +22,8 @@ resource "postgresql_role" "user" {
   inherit = true
   replication = false
   bypass_row_level_security = false
+  skip_reassign_owned = false
+  skip_drop_role      = false
 }
 
 # Grant privileges to user on the database
