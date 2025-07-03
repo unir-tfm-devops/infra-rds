@@ -9,8 +9,6 @@ resource "postgresql_database" "database" {
   tablespace_name   = "pg_default"
   connection_limit  = -1
   allow_connections = true
-
-  depends_on = [var.rds_instance]
 }
 
 # Create database user/role
@@ -24,8 +22,6 @@ resource "postgresql_role" "user" {
   inherit = true
   replication = false
   bypass_row_level_security = false
-
-  depends_on = [var.rds_instance]
 }
 
 # Grant privileges to user on the database

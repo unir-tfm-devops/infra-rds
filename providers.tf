@@ -3,11 +3,24 @@ provider "aws" {
 }
 
 provider "postgresql" {
-  host            = aws_db_instance.postgres.address
+  alias           = "test"
+  host            = aws_db_instance.postgres_test.address
   port            = 5432
   database        = "postgres"
-  username        = aws_db_instance.postgres.username
-  password        = aws_db_instance.postgres.password
+  username        = aws_db_instance.postgres_test.username
+  password        = aws_db_instance.postgres_test.password
+  sslmode         = "require"
+  connect_timeout = 15
+  superuser       = false
+}
+
+provider "postgresql" {
+  alias           = "prod"
+  host            = aws_db_instance.postgres_prod.address
+  port            = 5432
+  database        = "postgres"
+  username        = aws_db_instance.postgres_prod.username
+  password        = aws_db_instance.postgres_prod.password
   sslmode         = "require"
   connect_timeout = 15
   superuser       = false

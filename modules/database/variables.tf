@@ -13,8 +13,3 @@ variable "password" {
   type        = string
   sensitive   = true
 }
-
-variable "rds_instance" {
-  description = "The RDS instance resource to depend on"
-  type        = any
-} 
