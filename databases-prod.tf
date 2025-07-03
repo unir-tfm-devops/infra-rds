@@ -12,3 +12,17 @@ module "spring-boot-template-prod" {
     postgresql = postgresql.prod
   }
 }
+
+module "products-search-api-prod" {
+  source = "./modules/database"
+
+  database_name = "products-search-api-prod"
+  username      = "products-search-api-prod"
+  password      = "products-search-api-prod"
+
+  depends_on = [time_sleep.wait_for_rds]
+
+  provderis = {
+    postgresql = postgresql.prod
+  }
+}
