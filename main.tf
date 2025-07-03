@@ -17,7 +17,7 @@ resource "aws_db_instance" "postgres_test" {
   monitoring_interval    = 0
 
   tags = {
-    Name = "PostgreSQL RDS Test"
+    Name        = "PostgreSQL RDS Test"
     Environment = "test"
   }
 }
@@ -41,7 +41,7 @@ resource "aws_db_instance" "postgres_prod" {
   monitoring_interval    = 0
 
   tags = {
-    Name = "PostgreSQL RDS Production"
+    Name        = "PostgreSQL RDS Production"
     Environment = "production"
   }
 }
