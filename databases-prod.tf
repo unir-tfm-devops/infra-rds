@@ -12,3 +12,17 @@ module "spring-boot-template-prod" {
     postgresql = postgresql.prod
   }
 }
+
+module "bank-service-prod" {
+  source = "./modules/database"
+
+  database_name = "bank-service-prod"
+  username      = "bank-service-prod"
+  password      = "bank-service-prod"
+
+  depends_on = [time_sleep.wait_for_rds]
+
+  providers = {
+    postgresql = postgresql.prod
+  }
+}
